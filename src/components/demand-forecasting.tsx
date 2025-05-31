@@ -88,9 +88,9 @@ export function DemandForecasting() {
       </div>
 
       {/* Controls */}
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-6 p-4 bg-gradient-to-r from-white/5 to-white/3 border border-white/10 rounded-xl backdrop-blur-sm">
         <Select value={selectedPeriod} onValueChange={setSelectedPeriod}>
-          <SelectTrigger className="w-48">
+          <SelectTrigger className="w-56 h-12 text-base font-medium bg-white/10 border-white/20 text-white hover:bg-white/15 focus:ring-2 focus:ring-blue-500/50">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
@@ -99,7 +99,10 @@ export function DemandForecasting() {
             <SelectItem value="12months">12 miesięcy</SelectItem>
           </SelectContent>
         </Select>
-        <Badge variant="outline" className="text-sm">
+        <Badge
+          variant="outline"
+          className="text-base px-4 py-2 bg-gradient-to-r from-green-500/20 to-blue-500/20 border-green-400/30 text-green-100 font-semibold"
+        >
           Dokładność: 91.2%
         </Badge>
 
@@ -111,9 +114,29 @@ export function DemandForecasting() {
         />
       </div>
 
+      {/* Main Timeline Visualization */}
+      <Card id="timeline" className="p-6">
+        <CardHeader className="px-0 pt-0">
+          <CardTitle className="text-xl">
+            Oś Czasowa Popytu Transportowego
+          </CardTitle>
+          <CardDescription>
+            Interaktywna wizualizacja łącząca prognozy, warunki pogodowe i
+            wydarzenia miejskie
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="px-0">
+          {/* Timeline Chart */}
+          <TimelineChart data={timelineData} />
+
+          {/* Calendar Timeline */}
+          <CalendarTimeline data={timelineData} />
+        </CardContent>
+      </Card>
+
       {/* Current Events List and Map */}
       {events.length > 0 && (
-        <div className="grid gap-6 md:grid-cols-2">
+        <div id="events" className="grid gap-6 md:grid-cols-2">
           <Card>
             <CardHeader>
               <CardTitle className="text-lg">Aktywne Wydarzenia</CardTitle>
@@ -186,30 +209,14 @@ export function DemandForecasting() {
         </div>
       )}
 
-      {/* Main Timeline Visualization */}
-      <Card className="p-6">
-        <CardHeader className="px-0 pt-0">
-          <CardTitle className="text-xl">
-            Oś Czasowa Popytu Transportowego
-          </CardTitle>
-          <CardDescription>
-            Interaktywna wizualizacja łącząca prognozy, warunki pogodowe i
-            wydarzenia miejskie
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="px-0">
-          {/* Timeline Chart */}
-          <TimelineChart data={timelineData} />
-
-          {/* Calendar Timeline */}
-          <CalendarTimeline data={timelineData} />
-        </CardContent>
-      </Card>
-
       {/* Bottom Section: Seasonal & Anomalies */}
       <div className="grid gap-6 md:grid-cols-2">
-        <SeasonalChart data={seasonalData} />
-        <AnomaliesDetection data={anomaliesData} />
+        <div id="seasonal">
+          <SeasonalChart data={seasonalData} />
+        </div>
+        <div id="anomalies">
+          <AnomaliesDetection data={anomaliesData} />
+        </div>
       </div>
     </div>
   );

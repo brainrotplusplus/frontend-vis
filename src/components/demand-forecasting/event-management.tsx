@@ -237,8 +237,11 @@ export const EventManagement = ({
   return (
     <Sheet open={isSheetOpen} onOpenChange={onSheetOpenChange}>
       <SheetTrigger asChild>
-        <Button variant="outline">
-          <Plus className="h-4 w-4 mr-2" />
+        <Button
+          variant="outline"
+          className="h-12 px-6 text-base font-medium bg-gradient-to-r from-blue-500/20 to-purple-500/20 border-blue-400/30 text-white hover:from-blue-500/30 hover:to-purple-500/30 hover:border-blue-400/50 transition-all duration-200 shadow-lg shadow-blue-500/10"
+        >
+          <Plus className="h-5 w-5 mr-2" />
           Dodaj Wydarzenie
         </Button>
       </SheetTrigger>
