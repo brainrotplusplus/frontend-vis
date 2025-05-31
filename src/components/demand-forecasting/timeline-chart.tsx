@@ -44,7 +44,7 @@ export const TimelineChart = ({ data }: TimelineChartProps) => {
       <ResponsiveContainer key={chartKey} width="100%" height="100%">
         <LineChart
           data={data}
-          margin={{ top: 20, right: 0, left: 0, bottom: 100 }}
+          margin={{ top: 20, right: 0, left: 0, bottom: 60 }}
         >
           <XAxis
             dataKey="dayLabel"
@@ -54,7 +54,7 @@ export const TimelineChart = ({ data }: TimelineChartProps) => {
             interval={0}
             angle={-45}
             textAnchor="end"
-            height={80}
+            height={60}
           />
           <YAxis
             yAxisId="ridership"

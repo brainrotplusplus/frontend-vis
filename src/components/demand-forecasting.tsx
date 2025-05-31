@@ -130,7 +130,9 @@ export function DemandForecasting() {
           <TimelineChart data={timelineData} />
 
           {/* Calendar Timeline */}
-          <CalendarTimeline data={timelineData} />
+          <div className="-mt-4">
+            <CalendarTimeline data={timelineData} />
+          </div>
         </CardContent>
       </Card>
 

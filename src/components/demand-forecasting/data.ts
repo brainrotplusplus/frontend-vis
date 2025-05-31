@@ -17,8 +17,8 @@ export const baseTimelineData: Omit<TimelineDataItem, "event">[] = [
     weatherImpact: -15,
   },
   {
-    date: "2024-12-25",
-    dayLabel: "25 Gru",
+    date: "2024-12-21",
+    dayLabel: "21 Gru",
     ridership: 45000,
     predicted: 44800,
     weather: "cloudy",
@@ -26,8 +26,8 @@ export const baseTimelineData: Omit<TimelineDataItem, "event">[] = [
     weatherImpact: 5,
   },
   {
-    date: "2024-12-30",
-    dayLabel: "30 Gru",
+    date: "2024-12-22",
+    dayLabel: "22 Gru",
     ridership: 44500,
     predicted: 45200,
     weather: "sunny",
@@ -35,8 +35,8 @@ export const baseTimelineData: Omit<TimelineDataItem, "event">[] = [
     weatherImpact: 0,
   },
   {
-    date: "2025-01-05",
-    dayLabel: "5 Sty",
+    date: "2024-12-23",
+    dayLabel: "23 Gru",
     ridership: 58000,
     predicted: 46000,
     weather: "rain",
@@ -44,8 +44,8 @@ export const baseTimelineData: Omit<TimelineDataItem, "event">[] = [
     weatherImpact: 25,
   },
   {
-    date: "2025-01-10",
-    dayLabel: "10 Sty",
+    date: "2024-12-24",
+    dayLabel: "24 Gru",
     ridership: 47000,
     predicted: 47200,
     weather: "sunny",
@@ -53,8 +53,8 @@ export const baseTimelineData: Omit<TimelineDataItem, "event">[] = [
     weatherImpact: 0,
   },
   {
-    date: "2025-01-15",
-    dayLabel: "15 Sty",
+    date: "2024-12-25",
+    dayLabel: "25 Gru",
     ridership: 65000,
     predicted: 49000,
     weather: "cloudy",
@@ -62,8 +62,8 @@ export const baseTimelineData: Omit<TimelineDataItem, "event">[] = [
     weatherImpact: 5,
   },
   {
-    date: "2025-01-20",
-    dayLabel: "20 Sty",
+    date: "2024-12-26",
+    dayLabel: "26 Gru",
     ridership: 51000,
     predicted: 50800,
     weather: "sunny",
@@ -71,8 +71,8 @@ export const baseTimelineData: Omit<TimelineDataItem, "event">[] = [
     weatherImpact: 0,
   },
   {
-    date: "2025-01-25",
-    dayLabel: "25 Sty",
+    date: "2024-12-27",
+    dayLabel: "27 Gru",
     ridership: 52500,
     predicted: 52200,
     weather: "rain",
@@ -80,8 +80,8 @@ export const baseTimelineData: Omit<TimelineDataItem, "event">[] = [
     weatherImpact: 15,
   },
   {
-    date: "2025-02-01",
-    dayLabel: "1 Lut",
+    date: "2024-12-28",
+    dayLabel: "28 Gru",
     ridership: null,
     predicted: 54000,
     weather: "sunny",
@@ -89,8 +89,8 @@ export const baseTimelineData: Omit<TimelineDataItem, "event">[] = [
     weatherImpact: 0,
   },
   {
-    date: "2025-02-05",
-    dayLabel: "5 Lut",
+    date: "2024-12-29",
+    dayLabel: "29 Gru",
     ridership: null,
     predicted: 72000,
     weather: "sunny",
@@ -175,7 +175,7 @@ export const calculateImpact = (
 export const createDefaultEvents = (): Event[] => [
   {
     id: "default-1",
-    date: "2025-01-15",
+    date: "2024-12-25",
     name: "Koncert na Rynku Głównym",
     type: "music",
     attendees: 5000,
@@ -186,7 +186,7 @@ export const createDefaultEvents = (): Event[] => [
   },
   {
     id: "default-2",
-    date: "2025-02-01",
+    date: "2024-12-28",
     name: "Mecz Wisły Kraków",
     type: "sports",
     attendees: 15000,

@@ -53,51 +53,52 @@ export const CalendarTimeline = ({ data }: CalendarTimelineProps) => {
 
       {/* Weather Forecast Row */}
       <div className="border-t pt-4">
-        <h4 className="text-sm font-medium mb-3 text-center">
-          Prognoza Pogody i Wpływ na Ruch
-        </h4>
-        <div className="flex items-start justify-between">
+        <div className="flex items-center justify-between gap-2">
           {data.map((item, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center h-[80px] justify-between"
-            >
-              {/* Weather */}
-              <div className="flex flex-col items-center space-y-1">
-                <WeatherIcon weather={item.weather} className="h-6 w-6" />
-                <span className="text-xs text-muted-foreground font-medium">
-                  {item.temperature}°C
-                </span>
+            <div key={index} className="flex-1 relative">
+              <div className="flex flex-col items-center h-[80px] justify-between">
+                {/* Weather */}
+                <div className="flex flex-col items-center space-y-1">
+                  <WeatherIcon weather={item.weather} className="h-6 w-6" />
+                  <span className="text-xs text-muted-foreground font-medium">
+                    {item.temperature}°C
+                  </span>
+                </div>
+
+                {/* Impact indicator */}
+                <div className="flex flex-col items-center space-y-1">
+                  {item.weatherImpact !== 0 && (
+                    <>
+                      <div
+                        className={`w-3 h-3 rounded-full ${
+                          item.weatherImpact > 0 ? "bg-green-500" : "bg-red-500"
+                        }`}
+                      />
+                      <span
+                        className={`text-xs font-medium ${
+                          item.weatherImpact > 0
+                            ? "text-green-600"
+                            : "text-red-600"
+                        }`}
+                      >
+                        {item.weatherImpact > 0 ? "+" : ""}
+                        {item.weatherImpact}%
+                      </span>
+                    </>
+                  )}
+                  {item.weatherImpact === 0 && (
+                    <>
+                      <div className="w-3 h-3 rounded-full bg-gray-300" />
+                      <span className="text-xs text-muted-foreground">0%</span>
+                    </>
+                  )}
+                </div>
               </div>
 
-              {/* Impact indicator */}
-              <div className="flex flex-col items-center space-y-1">
-                {item.weatherImpact !== 0 && (
-                  <>
-                    <div
-                      className={`w-3 h-3 rounded-full ${
-                        item.weatherImpact > 0 ? "bg-green-500" : "bg-red-500"
-                      }`}
-                    />
-                    <span
-                      className={`text-xs font-medium ${
-                        item.weatherImpact > 0
-                          ? "text-green-600"
-                          : "text-red-600"
-                      }`}
-                    >
-                      {item.weatherImpact > 0 ? "+" : ""}
-                      {item.weatherImpact}%
-                    </span>
-                  </>
-                )}
-                {item.weatherImpact === 0 && (
-                  <>
-                    <div className="w-3 h-3 rounded-full bg-gray-300" />
-                    <span className="text-xs text-muted-foreground">0%</span>
-                  </>
-                )}
-              </div>
+              {/* Vertical divider */}
+              {index < data.length - 1 && (
+                <div className="absolute right-0 top-1/2 transform -translate-y-1/2 h-12 w-px bg-border" />
+              )}
             </div>
           ))}
         </div>
