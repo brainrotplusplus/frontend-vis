@@ -136,6 +136,16 @@ export function DemandForecasting() {
         </CardContent>
       </Card>
 
+      {/* Bottom Section: Seasonal & Anomalies */}
+      <div className="grid gap-6 md:grid-cols-2">
+        <div id="seasonal">
+          <SeasonalChart data={seasonalData} />
+        </div>
+        <div id="anomalies">
+          <AnomaliesDetection data={anomaliesData} />
+        </div>
+      </div>
+
       {/* Current Events List and Map */}
       {events.length > 0 && (
         <div id="events" className="grid gap-6 md:grid-cols-2">
@@ -210,16 +220,6 @@ export function DemandForecasting() {
           </Card>
         </div>
       )}
-
-      {/* Bottom Section: Seasonal & Anomalies */}
-      <div className="grid gap-6 md:grid-cols-2">
-        <div id="seasonal">
-          <SeasonalChart data={seasonalData} />
-        </div>
-        <div id="anomalies">
-          <AnomaliesDetection data={anomaliesData} />
-        </div>
-      </div>
     </div>
   );
 }

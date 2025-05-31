@@ -23,7 +23,7 @@ export function TransportCoverageMap() {
 
   return (
     <APIProvider apiKey={GOOGLE_MAPS_API_KEY}>
-      <div className="h-[300px] w-full rounded-lg overflow-hidden">
+      <div className="h-[450px] w-full rounded-lg overflow-hidden">
         <Map
           defaultCenter={{ lat: 50.0647, lng: 19.945 }}
           defaultZoom={12}
