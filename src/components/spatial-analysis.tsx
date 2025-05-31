@@ -9,19 +9,27 @@ export function SpatialAnalysis() {
   return (
     <div className="space-y-8">
       <div className="space-y-3">
-        <h2 className="text-3xl font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
+        <h2 className="text-3xl font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent animate-fade-in-up">
           Analiza Przestrzenna
         </h2>
-        <p className="text-white/60 text-lg leading-relaxed">
+        <p className="text-white/60 text-lg leading-relaxed animate-fade-in-up animation-delay-100">
           Analiza wzorców przestrzennych i optymalizacja rozmieszczenia
           infrastruktury transportowej
         </p>
       </div>
 
-      <AccessibilityAnalysis />
-      <StopPlanning />
-      <DensityAnalysis />
-      <AccessibilityImprovements />
+      <div className="animate-fade-in-up animation-delay-200">
+        <AccessibilityAnalysis />
+      </div>
+      <div className="animate-fade-in-up animation-delay-300">
+        <StopPlanning />
+      </div>
+      <div className="animate-fade-in-up animation-delay-400">
+        <DensityAnalysis />
+      </div>
+      <div className="animate-fade-in-up animation-delay-500">
+        <AccessibilityImprovements />
+      </div>
     </div>
   );
 }

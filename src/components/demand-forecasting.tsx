@@ -78,17 +78,17 @@ export function DemandForecasting() {
     <div className="space-y-8">
       {/* Header */}
       <div>
-        <h2 className="text-3xl font-bold tracking-tight">
+        <h2 className="text-3xl font-bold tracking-tight animate-fade-in-up">
           Inteligentne Prognozowanie Popytu
         </h2>
-        <p className="text-lg text-muted-foreground mt-2">
+        <p className="text-lg text-muted-foreground mt-2 animate-fade-in-up animation-delay-100">
           Zaawansowana analiza czasowa łącząca wzorce pogodowe, wydarzenia
           miejskie i trendy sezonowe
         </p>
       </div>
 
       {/* Controls */}
-      <div className="flex items-center gap-6 p-4 bg-gradient-to-r from-white/5 to-white/3 border border-white/10 rounded-xl backdrop-blur-sm">
+      <div className="flex items-center gap-6 p-4 bg-gradient-to-r from-white/5 to-white/3 border border-white/10 rounded-xl backdrop-blur-sm animate-fade-in-up animation-delay-200">
         <Select value={selectedPeriod} onValueChange={setSelectedPeriod}>
           <SelectTrigger className="w-56 h-12 text-base font-medium bg-white/10 border-white/20 text-white hover:bg-white/15 focus:ring-2 focus:ring-blue-500/50">
             <SelectValue />
@@ -115,7 +115,10 @@ export function DemandForecasting() {
       </div>
 
       {/* Main Timeline Visualization */}
-      <Card id="timeline" className="p-6">
+      <Card
+        id="timeline"
+        className="p-6 animate-fade-in-up animation-delay-300"
+      >
         <CardHeader className="px-0 pt-0">
           <CardTitle className="text-xl">
             Oś Czasowa Popytu Transportowego
@@ -138,10 +141,10 @@ export function DemandForecasting() {
 
       {/* Bottom Section: Seasonal & Anomalies */}
       <div className="grid gap-6 md:grid-cols-2">
-        <div id="seasonal">
+        <div id="seasonal" className="animate-fade-in-up animation-delay-400">
           <SeasonalChart data={seasonalData} />
         </div>
-        <div id="anomalies">
+        <div id="anomalies" className="animate-fade-in-up animation-delay-500">
           <AnomaliesDetection data={anomaliesData} />
         </div>
       </div>
@@ -149,7 +152,7 @@ export function DemandForecasting() {
       {/* Current Events List and Map */}
       {events.length > 0 && (
         <div id="events" className="grid gap-6 md:grid-cols-2">
-          <Card>
+          <Card className="animate-fade-in-up animation-delay-600">
             <CardHeader>
               <CardTitle className="text-lg">Aktywne Wydarzenia</CardTitle>
               <CardDescription>
@@ -207,7 +210,7 @@ export function DemandForecasting() {
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="animate-fade-in-up animation-delay-700">
             <CardHeader>
               <CardTitle className="text-lg">Lokalizacje Wydarzeń</CardTitle>
               <CardDescription>

@@ -39,13 +39,23 @@ export function RouteOptimization() {
     setIsOptimizationDrawerOpen(true);
   };
 
+  const getAnimationDelay = (index: number) => {
+    const delays = [
+      "animation-delay-700",
+      "animation-delay-800",
+      "animation-delay-900",
+      "animation-delay-1000",
+    ];
+    return delays[index] || "animation-delay-1000";
+  };
+
   return (
     <div className="space-y-8">
       <div className="space-y-3">
-        <h2 className="text-3xl font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
+        <h2 className="text-3xl font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent animate-fade-in-up">
           Optymalizacja Tras i Rozkładów
         </h2>
-        <p className="text-white/60 text-lg leading-relaxed">
+        <p className="text-white/60 text-lg leading-relaxed animate-fade-in-up animation-delay-100">
           Optymalizacja tras i rozkładów transportu publicznego na podstawie
           analizy popytu w czasie rzeczywistym
         </p>
@@ -53,11 +63,11 @@ export function RouteOptimization() {
 
       {/* Mapa Cieplna Popytu Section */}
       <div id="heatmap" className="space-y-6">
-        <h3 className="text-xl font-medium text-white/60">
+        <h3 className="text-xl font-medium text-white/60 animate-fade-in-slide animation-delay-200">
           Mapa Cieplna Popytu
         </h3>
         <div className="grid gap-6 md:grid-cols-2">
-          <Card className="linear-card">
+          <Card className="linear-card animate-fade-in-up animation-delay-300">
             <CardHeader className="pb-4">
               <CardTitle className="text-white font-semibold">
                 Popyt Godzinowy vs Pojemność
@@ -135,7 +145,7 @@ export function RouteOptimization() {
             </CardContent>
           </Card>
 
-          <Card className="linear-card">
+          <Card className="linear-card animate-fade-in-up animation-delay-400">
             <CardHeader className="pb-4">
               <CardTitle className="text-white font-semibold">
                 Mapa Cieplna Popytu
@@ -154,10 +164,10 @@ export function RouteOptimization() {
 
       {/* Optymalizacja Częstotliwości Section */}
       <div id="frequency" className="space-y-6">
-        <h3 className="text-xl font-medium text-white/60">
+        <h3 className="text-xl font-medium text-white/60 animate-fade-in-slide animation-delay-500">
           Optymalizacja Częstotliwości
         </h3>
-        <Card className="linear-card">
+        <Card className="linear-card animate-fade-in-up animation-delay-600">
           <CardHeader className="pb-4">
             <CardTitle className="text-white font-semibold">
               Alerty Wydajności Tras
@@ -172,7 +182,9 @@ export function RouteOptimization() {
               {routeAlerts.map((route, index) => (
                 <div
                   key={index}
-                  className="flex items-center justify-between p-4 bg-white/5 border border-white/10 rounded-xl hover:bg-white/8 transition-all duration-200"
+                  className={`flex items-center justify-between p-4 bg-white/5 border border-white/10 rounded-xl hover:bg-white/8 transition-all duration-200 animate-fade-in-up ${getAnimationDelay(
+                    index
+                  )}`}
                 >
                   <div className="flex items-center gap-4">
                     <div
@@ -234,13 +246,15 @@ export function RouteOptimization() {
 
       {/* Sugestie Tras Section */}
       <div id="suggested-routes" className="space-y-6">
-        <h3 className="text-xl font-medium text-white/60">Sugestie Tras</h3>
+        <h3 className="text-xl font-medium text-white/60 animate-fade-in-slide animation-delay-700">
+          Sugestie Tras
+        </h3>
         <SuggestedRoutes />
       </div>
 
       {/* Optymalizacja Przesiadki Section */}
       <div id="transfers" className="space-y-6">
-        <h3 className="text-xl font-medium text-white/60">
+        <h3 className="text-xl font-medium text-white/60 animate-fade-in-slide animation-delay-800">
           Optymalizacja Przesiadki
         </h3>
         <TransferOptimization />

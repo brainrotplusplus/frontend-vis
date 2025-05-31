@@ -21,9 +21,11 @@ import { RoutePopularityMap } from "./route-popularity-map";
 export function DensityAnalysis() {
   return (
     <div id="density" className="space-y-6">
-      <h3 className="text-xl font-medium text-white/60">Gęstość Zabudowy</h3>
+      <h3 className="text-xl font-medium text-white/60 animate-fade-in-slide animation-delay-200">
+        Gęstość Zabudowy
+      </h3>
       <div className="grid gap-4 md:grid-cols-2">
-        <Card className="linear-card">
+        <Card className="linear-card animate-fade-in-up animation-delay-300">
           <CardHeader>
             <CardTitle className="text-white font-semibold">
               Korelacja Gęstości i Wykorzystania
@@ -131,7 +133,7 @@ export function DensityAnalysis() {
           </CardContent>
         </Card>
 
-        <Card className="linear-card">
+        <Card className="linear-card animate-fade-in-up animation-delay-400">
           <CardHeader>
             <CardTitle className="text-white font-semibold">
               Mapa Cieplna Popularności Tras

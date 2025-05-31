@@ -78,6 +78,12 @@ export function AppSidebar({
     }
   };
 
+  const handleSectionChange = (sectionId: string) => {
+    setActiveSection(sectionId);
+    // Scroll to top of the page when changing main sections
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <Sidebar className="linear-sidebar w-64">
       <SidebarHeader className="border-b border-white/6 p-4">
@@ -95,7 +101,7 @@ export function AppSidebar({
               {menuItems.map((item) => (
                 <SidebarMenuItem key={item.id}>
                   <SidebarMenuButton
-                    onClick={() => setActiveSection(item.id)}
+                    onClick={() => handleSectionChange(item.id)}
                     isActive={activeSection === item.id}
                     className={`
                       w-full p-3 rounded-lg transition-all duration-200 group h-auto

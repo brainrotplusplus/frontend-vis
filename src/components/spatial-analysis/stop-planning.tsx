@@ -27,13 +27,13 @@ export function StopPlanning() {
 
   return (
     <div id="stops" className="space-y-6">
-      <h3 className="text-xl font-medium text-white/60">
+      <h3 className="text-xl font-medium text-white/60 animate-fade-in-slide animation-delay-200">
         Planowanie Przystanków
       </h3>
 
       {/* Overview Cards */}
       <div className="grid gap-4 md:grid-cols-4">
-        <Card className="linear-card">
+        <Card className="linear-card animate-fade-in-up animation-delay-300">
           <CardContent className="p-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center">
@@ -49,7 +49,7 @@ export function StopPlanning() {
           </CardContent>
         </Card>
 
-        <Card className="linear-card">
+        <Card className="linear-card animate-fade-in-up animation-delay-400">
           <CardContent className="p-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center">
@@ -65,7 +65,7 @@ export function StopPlanning() {
           </CardContent>
         </Card>
 
-        <Card className="linear-card">
+        <Card className="linear-card animate-fade-in-up animation-delay-500">
           <CardContent className="p-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-lg bg-red-500/20 flex items-center justify-center">
@@ -81,7 +81,7 @@ export function StopPlanning() {
           </CardContent>
         </Card>
 
-        <Card className="linear-card">
+        <Card className="linear-card animate-fade-in-up animation-delay-600">
           <CardContent className="p-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-lg bg-orange-500/20 flex items-center justify-center">
@@ -101,7 +101,7 @@ export function StopPlanning() {
       <div className="grid gap-6 lg:grid-cols-3">
         {/* Suggested Stops List */}
         <div className="lg:col-span-1">
-          <Card className="linear-card">
+          <Card className="linear-card animate-fade-in-up animation-delay-700">
             <CardHeader>
               <CardTitle className="text-white font-semibold">
                 Sugerowane Lokalizacje Przystanków
@@ -146,7 +146,7 @@ export function StopPlanning() {
 
         {/* Map */}
         <div className="lg:col-span-2">
-          <Card className="linear-card">
+          <Card className="linear-card animate-fade-in-up animation-delay-800">
             <CardHeader>
               <CardTitle className="text-white font-semibold">
                 Mapa Planowania Przystanków
@@ -164,7 +164,7 @@ export function StopPlanning() {
       </div>
 
       {/* Route Analysis */}
-      <Card className="linear-card">
+      <Card className="linear-card animate-fade-in-up animation-delay-900">
         <CardHeader>
           <CardTitle className="text-white font-semibold">
             Analiza Tras
