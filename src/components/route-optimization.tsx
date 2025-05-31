@@ -50,7 +50,7 @@ export function RouteOptimization() {
   };
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 overflow-hidden">
       <div className="space-y-3">
         <h2 className="text-3xl font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent animate-fade-in-up">
           Optymalizacja Tras i Rozkładów

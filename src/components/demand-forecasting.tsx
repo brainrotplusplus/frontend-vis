@@ -75,7 +75,7 @@ export function DemandForecasting() {
   };
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 overflow-hidden">
       {/* Header */}
       <div>
         <h2 className="text-3xl font-bold tracking-tight animate-fade-in-up">
