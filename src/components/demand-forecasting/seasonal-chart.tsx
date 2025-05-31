@@ -60,27 +60,35 @@ export const SeasonalChart = ({ data }: SeasonalChartProps) => {
                 tick={{ fontSize: 12 }}
               />
               <Tooltip
-                content={({ active, payload, label }: any) => {
+                content={({ active, payload, label }) => {
                   if (!active || !payload?.length) return null;
                   return (
                     <div className="bg-background border rounded-lg p-3 shadow-lg">
                       <h4 className="font-semibold mb-2">{label}</h4>
                       <div className="space-y-1">
-                        {payload.map((entry: any, index: number) => (
-                          <div
-                            key={index}
-                            className="flex items-center gap-2 text-sm"
-                          >
+                        {payload.map(
+                          (
+                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                            entry: any,
+                            index: number
+                          ) => (
                             <div
-                              className="w-3 h-3 rounded-full"
-                              style={{ backgroundColor: entry.color }}
-                            />
-                            <span>
-                              {entry.name}: {entry.value?.toLocaleString()}
-                            </span>
-                            {entry.dataKey === "temperature" && <span>°C</span>}
-                          </div>
-                        ))}
+                              key={index}
+                              className="flex items-center gap-2 text-sm"
+                            >
+                              <div
+                                className="w-3 h-3 rounded-full"
+                                style={{ backgroundColor: entry.color }}
+                              />
+                              <span>
+                                {entry.name}: {entry.value?.toLocaleString()}
+                              </span>
+                              {entry.dataKey === "temperature" && (
+                                <span>°C</span>
+                              )}
+                            </div>
+                          )
+                        )}
                       </div>
                     </div>
                   );
